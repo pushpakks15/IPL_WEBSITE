@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL WEBSITE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>IPL TEAM RECORD CALCULATOR</h1>
+<form action="/teamvsteam" method="get">
+    <label>Select Team 1</label>
+    <select name="team1">
+        {%for item in teams%}
+          <option>{{item}}</option>
+        {%endfor%}
+        <option>
+        </option>
+    </select>
+    <br><br>
+    <label>Select Team 2</label>
+    <select name="team2">
+        {%for item in teams%}
+          <option>{{item}}</option>
+        {%endfor%}
+        <option>
+        </option>
+    </select>
+    <br><br>
+    <input type="submit" value="Find track record">
+</form>
+</body>
+</html>
